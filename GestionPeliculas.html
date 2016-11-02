@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Gestion de Peliculas</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript"  src="js/GestionPeliculas.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Filmoteca</h2>
+    <form role="form" id="formularioPeliculas">
+      <div id="div_titulo" class="form-group">
+        <label class="col-lg-1 control-label" for="titulo">Titulo :</label>
+        <div class="col-lg-5">
+          <input type="text" class="form-control" name="titulo" id="titulo"/>
+          <span id="span_titulo"></span>
+        </div>
+      </div>
+        <br/>
+        <br/>
+        <br/>
+        <div id="div_director" class="form-group">
+          <label class="col-lg-1 control-label" for="director">Director :</label>
+          <div class="col-lg-5">
+          <input type="text" class="form-control"name="director" id="director"/>
+          <span id="span_director"></span>
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <div id="div_sipnosis" class="form-group">
+        <label class="col-lg-1 control-label" for="sipnosis">Sipnosis :</label>
+        <div class="col-lg-5">
+          <input  class="form-control" type="text" name="sipnosis" id="sipnosis"/>
+          <span id="span_sipnosis"></span>
+       </div>
+      </div>
+      <br/>
+      <br/>
+      <div id="div_fecha" class="form-group">
+        <label class="col-lg-1 control-label" for="fecha">Fecha :</label>
+        <div class="col-lg-5">
+         <input type="text" class="form-control" name="fecha" id="fecha"/>
+         <span id="span_fecha"></span>
+       </div>
+      </div>
+        <br/>
+        <br/>
+        <div class="form-group">
+          <input type="button" value="Crear nueva pelicula" name="guardar" id="guardar" class="btn btn-primary"/>
+          <input type="button" value="Modificar pelicula" name="modificar" id="modificar" class="btn btn-warning"/>
+          <input type="button" value="Borrar pelicula" name="borrar" id="borrar" class="btn btn-danger"/>
+        </div>
+    </form>
+  </div>
+    <br/>
+  <div class="container">
+    <table class="table table-hover">
+    </table>
+  </div>
+</body>
+</html>
