@@ -64,13 +64,14 @@ function presionFila(){
     let filaActual = $(this);
     let contador = 0;
     let arrayCeldas = new Array();
-    //$(this).find('td').each(function(){ alert($(this).html());});
     $(this).find('td').each(function(){ arrayCeldas[contador] = ($(this).html()); contador++;});
-    id = arrayCeldas[0];
-    $("#titulo").val(arrayCeldas[1]);
-    $("#director").val(arrayCeldas[2]);
-    $("#sipnosis").val(arrayCeldas[3]);
-    $("#fecha").val(arrayCeldas[4]);
+    if(arrayCeldas[0] != "ID"){
+        id = arrayCeldas[0];
+        $("#titulo").val(arrayCeldas[1]);
+        $("#director").val(arrayCeldas[2]);
+        $("#sipnosis").val(arrayCeldas[3]);
+        $("#fecha").val(arrayCeldas[4]);
+    }
 }
 function validar(){
   let validacion = true;
