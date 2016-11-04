@@ -20,14 +20,15 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript"  src="js/GestionPeliculas.js"></script>
-    <script type="text/javascript"  src="js/ModuloDao.js"></script>
+    <!--<script type="text/javascript"  src="js/ModuloDao.js"></script>-->
+    <script type="text/javascript"  src="js/ClassDaoAjax.js"></script>
 </head>
 <body>
   <div class="container">
     <h2>Filmoteca</h2>
     <form role="form" id="formularioPeliculas">
       <div id="div_titulo" class="form-group">
-        <label class="col-lg-1 control-label" for="titulo">Titulo :</label>
+        <label class="col-lg-1 control-label" for="titulo">Titulo:</label>
         <div class="col-lg-5">
           <input type="text" class="form-control" name="titulo" id="titulo"/>
           <span id="span_titulo"></span>
@@ -37,7 +38,7 @@
         <br/>
         <br/>
         <div id="div_director" class="form-group">
-          <label class="col-lg-1 control-label" for="director">Director :</label>
+          <label class="col-lg-1 control-label" for="director">Director:</label>
           <div class="col-lg-5">
           <input type="text" class="form-control"name="director" id="director"/>
           <span id="span_director"></span>
@@ -46,7 +47,7 @@
       <br/>
       <br/>
       <div id="div_sipnosis" class="form-group">
-        <label class="col-lg-1 control-label" for="sipnosis">Sipnosis :</label>
+        <label class="col-lg-1 control-label" for="sipnosis">Sipnosis:</label>
         <div class="col-lg-5">
           <input  class="form-control" type="text" name="sipnosis" id="sipnosis"/>
           <span id="span_sipnosis"></span>
@@ -55,7 +56,7 @@
       <br/>
       <br/>
       <div id="div_fecha" class="form-group">
-        <label class="col-lg-1 control-label" for="fecha">Fecha :</label>
+        <label class="col-lg-1 control-label" for="fecha">Fecha:</label>
         <div class="col-lg-5">
          <input type="text" class="form-control" name="fecha" id="fecha"/>
          <span id="span_fecha"></span>

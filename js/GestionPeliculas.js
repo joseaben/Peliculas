@@ -1,25 +1,36 @@
 $(document).ready(initializeEvents);
 var id = 0;
+var daoAjax;
 function initializeEvents(){
+    daoAjax = new ClassDaoAjax();
+
     $( "#fecha" ).datepicker();
-    $("#guardar").click(addRegister);
-    $("#borrar").click(deleteRegister);
-    $("#modificar").click(updateRegister);
-    loadRegistros();
+    $("#guardar").click(function(){daoAjax.add({titulo:$("#titulo").val(),director:$("#director").val(),sipnosis:$("#sipnosis").val(),fecha:$("#fecha").val()},peticionCompletada,peticionFallida)});
+    $("#borrar").click(function(){daoAjax.delete(id,peticionCompletada,peticionFallida)});
+    $("#modificar").click(function(){daoAjax.update({titulo:$("#titulo").val(),director:$("#director").val(),sipnosis:$("#sipnosis").val(),fecha:$("#fecha").val()},id,peticionCompletada,peticionFallida)}); 
+    
+    daoAjax.load(resultadoGet);
 }
 function peticionCompletada(data, status){
     $("#titulo").val("");
     $("#director").val("");
     $("#sipnosis").val("");
     $("#fecha").val("");
-    loadRegistros();
+    daoAjax.load(resultadoGet);
 }
 function peticionFallida(jqXHR, status, error){
     alert("Error al procesar la peticion");
 }
 function resultadoGet(data,status){
     if(status == "success"){
+        $("table").empty();
+        $("table").append("<thead><tr><td>ID</td><td>TITULO</td><td>DIRECTOR</td><td>SIPNOSIS</td><td>FECHA</td></tr></thead>");
         for(let peliculas = 0; peliculas < data.length;peliculas++){
+            if(peliculas == 0){
+              $("table").append("<thbody>")
+            }else if(peliculas == (data-length - 1)){
+               $("table").append("</thbody>")
+            }
             $("table").append("<tr><td>" + data[peliculas].id +"</td>"+"<td>"+data[peliculas].titulo+"</td>"+"<td>"+data[peliculas].director+"</td>"+"<td>"+data[peliculas].sipnosis+"</td>"+"<td>"+data[peliculas].fecha+"</td></tr>");
         }
         $("tr").click(presionFila);
