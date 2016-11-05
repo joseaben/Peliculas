@@ -3,7 +3,7 @@
     {
       "titulo": "El club de la lucha",
       "director": "David Fincher",
-      "sipnosis": "sipnosis pelicula",
+      "sinopsis": "sipnosis pelicula",
       "fecha": "10/12/2010",
       "id": 1
     },
@@ -11,7 +11,7 @@
       "id": 2,
       "titulo": "Los vengadores",
       "director": "Joss Whedon",
-      "sipnosis": "sipnosis pelicula",
+      "sinopsis": "sipnosis pelicula",
       "fecha": "12/12/2010"
     }
   ]
